@@ -1,0 +1,145 @@
+<header class="header-area header-three">
+    <div class="header-mid d-none d-xl-block pt-25 pb-25">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 col-md-12 d-none d-md-block">
+                    <div class="header-social">
+                        <span>
+                            Suivez-nous:- 
+                            <a href="https://www.facebook.com/people/Sant%C3%A9Synchro/61584047961970/" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/santesynchro/" title="Instagram"><i class="fab fa-instagram"></i></a>               
+                        </span>                    
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8 text-right d-none d-lg-block">
+                    <div class="header-cta">
+                        <ul>
+                            <li>
+                                <div class="call-box">                                
+                                    <div class="text">
+                                        <span>Appelez maintenant </span>
+                                        <strong>+216 56034533</strong>                                              
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="call-box">                                
+                                    <div class="text">
+                                        <span>Envoyez un email</span>
+                                        <strong>mhamdirim65&#64;gmail.com</strong>                                               
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="header-sticky" class="menu-area">
+        <div class="second-menu">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-2 col-md-12">
+                        <div class="logo mt-10 mb-10">
+                            <a href="index.html"><img src="assets/img/logo/logo1.png" alt="logo"></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-12 d-sm-none d-xl-none d-md-block">
+                        <div class="logo">
+                            <a href="index.html"><img src="assets/img/logo/f_logo.png" alt="logo"></a>
+                        </div>
+                    </div>
+                    <div class="col-xl-9 col-lg-10 text-center">
+                        <div class="main-menu">
+                            <nav id="mobile-menu">
+                                <ul>
+                                    <li class="has-sub">
+                                        <a href="">Acceuil</a>
+                                    </li>
+                                    <li><a href="about">Qui Sommes Nous</a></li>
+                                    
+                                    <!-- Menu pour salle de sport -->
+                                    <li class="has-sub" *ngIf="userRole === 'salle de sport'">
+                                        <a href="#">Services</a>
+                                        <ul>
+                                            <li><a href="ajouter-pack">Ajouter Pack</a></li>
+                                            <li><a href="mes-packs">Mes Pack</a></li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <!-- Menu pour tous sauf coach et salle de sport -->
+                                    <li class="has-sub" *ngIf="!userRole || userRole === 'client'">
+                                        <a href="/liste-coach">Liste Coach</a>
+                                    </li>
+                                    
+                                    <!-- Menu pour client -->
+                                    <li class="has-sub" *ngIf="userRole === 'client'">
+                                        <a href="/liste-pack">Nos packs</a>
+                                    </li>
+                                    
+                                    <!-- Menu pour coach -->
+                                    <li class="has-sub" *ngIf="userRole === 'coach'">
+                                        <a href="/liste-clients">Liste Clients</a>
+                                    </li>
+                                    
+                                    <li class="has-sub" *ngIf="userRole === 'coach'">
+                                        <a href="/planning">Planning</a>
+                                    </li>
+                                    
+                                    <!-- Menu pour client -->
+                                    <li class="has-sub" *ngIf="userRole === 'client'">
+                                        <a href="/liste-reservation-client">Réservation coach</a>
+                                    </li>
+                                    
+                                    <li class="has-sub">
+                                        <a href="contact">Contact</a>
+                                    </li>
+                                    
+                                    <!-- Profil selon le rôle -->
+                                    <li class="has-sub" *ngIf="userRole === 'client'">
+                                        <a href="/profil">Mon Profil</a>
+                                    </li>
+                                    
+                                    <li class="has-sub" *ngIf="userRole === 'coach'">
+                                        <a href="/profil-coach">Mon Profil</a>
+                                    </li>
+                                    
+                                    <li class="has-sub" *ngIf="userRole === 'salle de sport'">
+                                        <a href="/profil-salle">Mon Profil</a>
+                                    </li>
+                                    
+                                    <!-- Connexion si non connecté -->
+                                    <li class="has-sub" *ngIf="!userRole">
+                                        <a href="/choix">Connexion</a>
+                                    </li>
+                                    
+                                    <!-- Plannings pour client -->
+                                    <li class="has-sub" *ngIf="userRole === 'client'">
+                                        <a href="/liste-planning">Plannings</a>
+                                    </li>
+                                    
+                                    <!-- Déconnexion si connecté -->
+                                    <li class="has-sub" *ngIf="userRole" (click)="logout()">
+                                        <a href="#">Déconnexion</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-xl-1 col-lg-1 text-right d-none d-xl-block">
+                        <div class="header-cta3">
+                            <!-- Info utilisateur connecté -->
+                            <div *ngIf="userRole" class="user-info">
+                                <span class="badge bg-primary">{{userRole | titlecase}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="mobile-menu"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

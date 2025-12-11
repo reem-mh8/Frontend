@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ajouter Pack - Welly Admin</title>
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+
+    <!-- Main wrapper -->
+    <div id="main-wrapper">
+
+        <!-- Nav header -->
+        <app-nav-header></app-nav-header>
+
+        <!-- Sidebar -->
+        <app-menu></app-menu>
+
+        <!-- Content body start -->
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="page-titles">
+                    <h4>Ajouter un Pack</h4>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-6 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Formulaire d’ajout de pack</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="basic-form">
+                                    <form [formGroup]="ajouterForm" (ngSubmit)="addPack()">
+
+                                        <!-- Nom du pack -->
+                                        <div class="mb-3">
+                                            <label>Nom du pack</label>
+                                            <input type="text" formControlName="nom" class="form-control" placeholder="Nom du pack">
+                                        </div>
+
+                                        <!-- Prix -->
+                                        <div class="mb-3">
+                                            <label>Prix</label>
+                                            <input type="text" formControlName="prix" class="form-control" placeholder="Prix">
+                                        </div>
+
+                                        <!-- Image -->
+                                        <div class="mb-3">
+                                            <label>Image</label>
+                                            <input type="file" (change)="onSelectFile($event)" class="form-control">
+                                            <div *ngIf="imgURL" class="mt-2">
+                                                <img [src]="imgURL" alt="Preview" style="max-width:100px; max-height:100px;">
+                                            </div>
+                                        </div>
+
+                                        <!-- Description -->
+                                        <div class="mb-3">
+                                            <label>Description</label>
+                                            <input type="text" formControlName="description" class="form-control" placeholder="Description">
+                                        </div>
+
+                                        <!-- Salle de sport -->
+                                        <div class="mb-3">
+                                            <label>Salle de sport</label>
+                                            <select formControlName="salleDeSport" class="form-control">
+                                                <option value="" disabled>Sélectionnez une salle</option>
+                                                <option *ngFor="let salle of listSalle" [value]="salle.id">{{ salle.nom }}</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Catégorie -->
+                                        <div class="mb-3">
+                                            <label>Catégorie</label>
+                                            <select formControlName="category" class="form-control">
+                                                <option value="" disabled>Sélectionnez une catégorie</option>
+                                                <option *ngFor="let cat of listCategory" [value]="cat.id">{{ cat.nom }}</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Message -->
+                                        <span [innerHTML]="messageCommande"></span>
+
+                                        <!-- Bouton Ajouter -->
+                                        <button type="submit" class="btn btn-primary mt-3">Ajouter le pack</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Content body end -->
+
+        <!-- Footer -->
+        <div class="footer"></div>
+
+    </div>
+    <!-- Main wrapper end -->
+
+</body>
+
+</html>

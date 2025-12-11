@@ -1,0 +1,125 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Evocar - Liste des Clients</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<!-- Cursor -->
+<div class="cursor js-cursor"></div>
+
+<!-- header -->
+<app-header></app-header>
+<!-- header-end -->
+
+<!-- main-area -->
+<main>
+
+    <!-- breadcrumb-area -->
+    <section class="breadcrumb-area d-flex align-items-center" 
+             style="background-image:url(img/bg/bdrc-bg.jpg); padding-top: 20px; padding-bottom: 20px;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="breadcrumb-wrap text-left">
+                        <div class="breadcrumb-title">
+                            <h2>Liste des clients inscrits</h2>
+                            <div class="breadcrumb-wrap">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Liste Clients</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb-area-end -->
+
+    <!-- shop-area -->
+    <section class="shop-area pt-60 pb-60 p-relative">
+        <div class="container">
+
+            <div class="section-title text-center mb-30">
+                <h2>Liste des clients inscrits</h2>
+                <p>Consultez les informations des clients inscrits</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-30" *ngFor="let client of clientsToDisplay">
+                    <div class="product text-center shadow-sm p-3 rounded">
+
+                        <div class="product__img position-relative">
+                            <img src="img/shop/img5.jpg" alt="Client" class="img-fluid rounded">
+                        </div>
+
+                        <div class="product__content pt-3">
+                            <h5 class="mb-1">{{client.nom}} {{client.prenom}}</h5>
+
+                            <p class="mb-1"><strong>Email:</strong> {{client.email}}</p>
+                            <p class="mb-1"><strong>Mobile:</strong> {{client.mobile}}</p>
+                            <p class="mb-1"><strong>Âge:</strong> {{client.age}}</p>
+
+                            <!-- Bouton Supprimer -->
+                            <button class="btn btn-danger btn-sm mt-2 me-2" (click)="deleteClient(client)">
+                                Supprimer
+                            </button>
+
+                            <!-- Bouton Chat -->
+                            <a href="video-call" class="btn btn-primary btn-sm mt-2">
+                                Chat
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="row mt-50">
+                <div class="col-12 text-center">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                            <a class="page-link" href="#" (click)="prevPage(); $event.preventDefault()">
+                                &laquo;
+                            </a>
+                        </li>
+
+                        <li class="page-item"
+                            *ngFor="let page of [].constructor(totalPages); let i = index"
+                            [class.active]="currentPage === i + 1">
+                            <a class="page-link" href="#" (click)="goToPage(i + 1); $event.preventDefault()">
+                                {{ i + 1 }}
+                            </a>
+                        </li>
+
+                        <li class="page-item">
+                            <a class="page-link" href="#" (click)="nextPage(); $event.preventDefault()">
+                                &raquo;
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- shop-area-end -->
+
+</main>
+<!-- main-area-end -->
+
+<!-- footer -->
+<app-footer></app-footer>
+<!-- footer-end -->
+
+</body>
+</html>

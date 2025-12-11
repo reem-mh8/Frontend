@@ -1,0 +1,176 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    
+<!-- Mirrored from htmldemo.zcubethemes.com/maxfit/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Feb 2025 12:59:53 GMT -->
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Maxfit - Fitness Gym HTML Template</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+    </head>
+    <body>
+        <!-- Cursor -->
+        <div class="cursor js-cursor"></div>
+       <!-- header -->
+        <app-header></app-header>
+        <!-- header-end -->
+        <!-- offcanvas-area -->
+          <div class="offcanvas-menu">
+             <span class="menu-close"><i class="fas fa-times"></i></span>
+             <form role="search" method="get" id="searchform"   class="searchform" action="#">
+                <input type="text" name="s" id="search" placeholder="Search"/>
+                <button><i class="fa fa-search"></i></button>
+             </form>
+             <div id="cssmenu3" class="menu-one-page-menu-container">
+                <ul  class="menu">
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="index.html">Home</a></li>
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="about.html">About Us</a></li>
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="classes.html">Classes</a></li>
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="pricing.html">Pricing </a></li>
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="team.html">Team </a></li>
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="projects.html">Cases Study</a></li>
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="blog.html">Blog</a></li>
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="contact.html">Contact</a></li>
+                </ul>
+             </div>
+             <div id="cssmenu2" class="menu-one-page-menu-container">
+                <ul id="menu-one-page-menu-12" class="menu">
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#home"><span>+8 12 3456897</span></a></li>
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#howitwork"><span>info@example.com</span></a></li>
+                </ul>
+             </div>
+          </div>
+          <div class="offcanvas-overly"></div>
+          <!-- offcanvas-end -->
+        <!-- main-area -->
+        <main>
+            
+           <!-- breadcrumb-area -->
+            
+            <!-- breadcrumb-area-end -->
+             
+
+
+<!-- profil-area -->
+<section class="about-area pt-120 pb-150 p-relative fix">
+
+  <div class="container">
+    <div class="row justify-content-center">
+
+      <!-- Titre -->
+      <div class="col-lg-10 text-center mb-5">
+        <h2 class="second-title" style="font-size:34px; font-weight:700;">
+          Bienvenue sur votre espace personnel
+        </h2>
+        <p style="font-size:18px; color:#666;">
+          Retrouvez ici toutes vos informations personnelles.
+        </p>
+      </div>
+
+      <!-- Carte Profil -->
+      <div class="col-lg-8">
+        <div
+          style="
+            background:#fff;
+            padding:40px;
+            border-radius:18px;
+            box-shadow:0 8px 25px rgba(0,0,0,0.08);
+          "
+        >
+
+          <h4 style="margin-bottom:25px; font-weight:600; color:#444;">
+            Vos informations
+          </h4>
+
+          <!-- Vérifier le chargement -->
+          <div *ngIf="client; else loading">
+
+            <div style="font-size:17px; line-height:1.8;">
+
+              <p><strong>Nom :</strong> {{ client.nom }}</p>
+              <p><strong>Prénom :</strong> {{ client.prenom }}</p>
+
+              <p>
+                <strong>Email :</strong>
+                <span style="color:#e00070;">{{ client.email }}</span>
+              </p>
+
+              <p><strong>Âge :</strong> {{ client.age }} ans</p>
+
+              <p>
+                <strong>Téléphone :</strong>
+                <span style="font-weight:500;">
+                  +216 {{ client.mobile }}
+                </span>
+              </p>
+
+            </div>
+
+            <div class="mt-4 text-center">
+              <a
+                routerLink="/modifier-profil"
+                class="btn btn-primary"
+                style="
+                  background:#e00070;
+                  border:none;
+                  padding:12px 32px;
+                  font-size:16px;
+                  border-radius:10px;
+                "
+              >
+                Modifier mes informations
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Loading -->
+          <ng-template #loading>
+            <p style="font-size:16px; color:#777;">Chargement du profil...</p>
+          </ng-template>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- profil-area-end -->
+
+
+
+
+
+
+              <!-- counter-area -->
+        
+         <!-- counter-area-end --> <!-- offer-area -->
+            
+            <!-- team-area-end -->  
+            <!-- team-area -->
+            
+            <!-- team-area-end -->  
+            
+             <!-- brand-area -->
+            
+            <!-- brand-area-end -->        
+            
+             <!-- cta-area -->
+            
+            <!-- cta-area-end -->	
+        </main>
+        <!-- main-area-end -->
+
+        <!-- footer -->
+        <app-footer></app-footer>
+        <!-- footer-end -->
+		<!-- JS here -->
+        
+    </body>
+
+<!-- Mirrored from htmldemo.zcubethemes.com/maxfit/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Feb 2025 12:59:54 GMT -->
+</html>

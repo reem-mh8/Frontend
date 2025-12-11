@@ -1,0 +1,119 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Evocar - Mes Packs</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div class="cursor js-cursor"></div>
+  <app-header></app-header>
+
+  <main>
+    <section class="breadcrumb-area d-flex align-items-center" style="background-image:url(img/bg/bdrc-bg.jpg); padding-top: 20px; padding-bottom: 20px;">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-xl-12 col-lg-12">
+            <div class="breadcrumb-wrap text-left">
+              <div class="breadcrumb-title">
+                <h2>Mes packs</h2>
+                <div class="breadcrumb-wrap">
+                  <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Mes Packs</li>
+                    </ol>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shop-area pt-60 pb-60 p-relative">
+      <div class="container">
+        <div class="section-title text-center mb-30">
+          <h2>Mes packs créés</h2>
+          <p>Gérez vos packs créés</p>
+          <div class="mb-4">
+            <a href="/ajouter-pack" class="btn btn-success">
+              <i class="fas fa-plus"></i> Ajouter un nouveau pack
+            </a>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-30" *ngFor="let pack of packsToDisplay">
+            <div class="product text-center shadow-sm p-3 rounded">
+              <div class="product__img position-relative">
+                <img [src]="pack.image || 'img/shop/img5.jpg'" alt="{{pack.nom}}" class="img-fluid rounded">
+                <span class="badge bg-info position-absolute" style="top: 10px; left: 10px;">
+                  {{pack.category?.nom || 'Non catégorisé'}}
+                </span>
+              </div>
+              <div class="product__content pt-3">
+                <h5 class="mb-1">{{pack.nom}}</h5>
+                <p class="mb-1"><strong>Description:</strong> {{pack.description}}</p>
+                <p class="mb-1"><strong>Catégorie:</strong> {{pack.category?.nom || 'Non spécifiée'}}</p>
+                <p class="mb-1"><strong>Prix:</strong> {{pack.prix}} dt</p>
+
+                <p class="mb-1" *ngIf="pack.user"><strong>Salle :</strong> {{pack.user.nom}} {{pack.user.prenom}}</p>
+                <p class="mb-1" *ngIf="pack.user"><strong>Adresse :</strong> {{pack.user.adresse || 'Non spécifiée'}}</p>
+                <p class="mb-1" *ngIf="pack.user"><strong>Téléphone :</strong> {{pack.user.mobile || 'Non spécifié'}}</p>
+
+                <div class="mt-3 d-flex justify-content-between">
+                  <button class="btn btn-warning btn-sm" (click)="editPack(pack)">
+                    <i class="fas fa-edit"></i> Modifier
+                  </button>
+                  <button class="btn btn-danger btn-sm" (click)="deletePack(pack)">
+                    <i class="fas fa-trash"></i> Supprimer
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" *ngIf="MesPacks.length === 0">
+          <div class="col-12 text-center">
+            <div class="alert alert-info">
+              <i class="fas fa-info-circle"></i> Vous n'avez pas encore créé de pack.
+              <a href="/ajouter-pack" class="alert-link">Cliquez ici pour en créer un</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-50" *ngIf="MesPacks.length > 0">
+          <div class="col-12 text-center">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <a class="page-link" href="#" (click)="prevPage(); $event.preventDefault()">
+                  <i class="fas fa-angle-left"></i>
+                </a>
+              </li>
+              <li class="page-item" *ngFor="let page of [].constructor(totalPages()); let i = index"
+                  [class.active]="currentPage === i + 1">
+                <a class="page-link" href="#" (click)="goToPage(i + 1); $event.preventDefault()">{{ i + 1 }}</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#" (click)="nextPage(); $event.preventDefault()">
+                  <i class="fas fa-angle-right"></i>
+                </a>
+              </li>
+            </ul>
+            <p class="text-muted mt-2">
+              Affichage de {{getStartIndex() + 1}} à {{getEndIndex()}} sur {{MesPacks.length}} packs
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <app-footer></app-footer>
+</body>
+</html>

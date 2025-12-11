@@ -1,0 +1,144 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Evocar - Liste des Packs</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div class="cursor js-cursor"></div>
+  <app-header></app-header>
+
+  <!-- Offcanvas -->
+  <div class="offcanvas-menu">
+    <span class="menu-close"><i class="fas fa-times"></i></span>
+    <form role="search" method="get" id="searchform" class="searchform" action="#">
+      <input type="text" name="s" id="search" placeholder="Search"/>
+      <button><i class="fa fa-search"></i></button>
+    </form>
+    <div id="cssmenu3" class="menu-one-page-menu-container">
+      <ul class="menu">
+        <li class="menu-item"><a href="index.html">Home</a></li>
+        <li class="menu-item"><a href="about.html">About Us</a></li>
+        <li class="menu-item"><a href="classes.html">Classes</a></li>
+        <li class="menu-item"><a href="pricing.html">Pricing</a></li>
+        <li class="menu-item"><a href="team.html">Team</a></li>
+        <li class="menu-item"><a href="projects.html">Cases Study</a></li>
+        <li class="menu-item"><a href="blog.html">Blog</a></li>
+        <li class="menu-item"><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div id="cssmenu2" class="menu-one-page-menu-container">
+      <ul class="menu">
+        <li class="menu-item"><a href="#home"><span>+8 12 3456897</span></a></li>
+        <li class="menu-item"><a href="#howitwork"><span>info@example.com</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="offcanvas-overly"></div>
+
+  <main>
+    <section class="breadcrumb-area d-flex align-items-center" style="background-image:url(img/bg/bdrc-bg.jpg); padding-top: 20px; padding-bottom: 20px;">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-xl-12 col-lg-12">
+            <div class="breadcrumb-wrap text-left">
+              <div class="breadcrumb-title">
+                <h2>Liste des packs disponibles</h2>
+                <div class="breadcrumb-wrap">
+                  <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Liste Packs</li>
+                    </ol>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shop-area pt-60 pb-60 p-relative">
+      <div class="container">
+        <div class="section-title text-center mb-30">
+          <h2>Liste des packs disponibles</h2>
+          <p>Choisissez votre pack et réservez-le facilement</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-30" *ngFor="let pack of packsToDisplay">
+            <div class="product text-center shadow-sm p-3 rounded">
+              <div class="product__img position-relative">
+                <img [src]="pack.image || 'img/shop/img5.jpg'" alt="{{pack.nom}}" class="img-fluid rounded">
+              </div>
+              <div class="product__content pt-3">
+                <h5 class="mb-1">{{pack.nom}}</h5>
+                <p class="mb-1"><strong>Description:</strong> {{pack.description}}</p>
+                <p class="mb-1"><strong>Catégorie:</strong> {{pack.category?.nom}}</p>
+                <p class="mb-0"><strong>Prix:</strong> {{pack.prix}} dt</p>
+
+                <!-- Salle de sport (User avec rôle salle de sport) -->
+                <p class="mb-1" *ngIf="pack.user"><strong>Salle de sport :</strong> 
+                  {{pack.user.nom}}
+                </p>
+                <p class="mb-1" *ngIf="pack.user"><strong>Adresse :</strong> 
+                  {{pack.user.adresse}}
+                </p>
+                <p class="mb-1" *ngIf="pack.user"><strong>Téléphone :</strong> 
+                  {{pack.user.mobile}}
+                </p>
+
+                <!-- Message si pas de salle -->
+                <p class="mb-1 text-warning" *ngIf="!pack.user">
+                  Salle de sport non attribuée
+                </p>
+
+                <div class="mt-3">
+                  <a 
+                    [routerLink]="['/paiement', pack.id]" 
+                    class="btn btn-block"
+                    style="background: linear-gradient(135deg, #ff99ff, #c77dff, #9d4edd, #7b2cbf, #5a8dee); border: none; color: white; padding: 12px 20px; border-radius: 30px; font-size: 16px; font-weight: 600; display: block; width: 100%; transition: 0.3s ease-in-out; box-shadow: 0 4px 12px rgba(0,0,0,0.15); background-size: 300% 300%;"
+                    onmouseover="this.style.backgroundPosition='right center';"
+                    onmouseout="this.style.backgroundPosition='left center';"
+                  >
+                    Réserver
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="row mt-50">
+          <div class="col-12 text-center">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <a class="page-link" href="#" (click)="prevPage(); $event.preventDefault()">
+                  <i class="fas fa-angle-left"></i>
+                </a>
+              </li>
+              <li class="page-item" *ngFor="let page of [].constructor(totalPages()); let i = index"
+                  [class.active]="currentPage === i + 1">
+                <a class="page-link" href="#" (click)="goToPage(i + 1); $event.preventDefault()">{{ i + 1 }}</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#" (click)="nextPage(); $event.preventDefault()">
+                  <i class="fas fa-angle-right"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <app-footer></app-footer>
+</body>
+</html>

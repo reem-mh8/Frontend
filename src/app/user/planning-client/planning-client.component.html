@@ -1,0 +1,161 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+   
+<!-- Mirrored from htmldemo.zcubethemes.com/maxfit/shop.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Feb 2025 13:00:08 GMT -->
+<head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <title>Evocar - Electric Vehicle & Charging Station HTML Template </title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      
+   </head>
+   <body>
+       <!-- Cursor -->
+        <div class="cursor js-cursor"></div>
+      <!-- header -->
+        <app-header></app-header>
+        <!-- header-end -->
+        <!-- offcanvas-area -->
+          <div class="offcanvas-menu">
+             <span class="menu-close"><i class="fas fa-times"></i></span>
+             <form role="search" method="get" id="searchform"   class="searchform" action="#">
+                <input type="text" name="s" id="search" placeholder="Search"/>
+                <button><i class="fa fa-search"></i></button>
+             </form>
+             <div id="cssmenu3" class="menu-one-page-menu-container">
+                <ul  class="menu">
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="index.html">Home</a></li>
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="about.html">About Us</a></li>
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="classes.html">Classes</a></li>
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="pricing.html">Pricing </a></li>
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="team.html">Team </a></li>
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="projects.html">Cases Study</a></li>
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="blog.html">Blog</a></li>
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="contact.html">Contact</a></li>
+                </ul>
+             </div>
+             <div id="cssmenu2" class="menu-one-page-menu-container">
+                <ul id="menu-one-page-menu-12" class="menu">
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#home"><span>+8 12 3456897</span></a></li>
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#howitwork"><span>info&#64;example.com</span></a></li>
+                </ul>
+             </div>
+          </div>
+          <div class="offcanvas-overly"></div>
+          <!-- offcanvas-end -->
+        <!-- main-area -->
+        <main>
+            
+           <!-- breadcrumb-area -->
+            <section class="breadcrumb-area d-flex  p-relative align-items-center" style="background-image:url(img/bg/bdrc-bg.jpg)">
+              
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-12 col-lg-12">
+                            <div class="breadcrumb-wrap text-left">
+                                <div class="breadcrumb-title">
+                                   <h2>Shop</h2>      
+                                    <div class="breadcrumb-wrap">
+                              
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                       <li class="breadcrumb-item active" aria-current="page">Shop </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                                </div>
+                            </div>
+                         
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb-area-end -->
+			<!-- shop-area -->
+            <section class="shop-area pt-120 pb-120 p-relative " data-animation="fadeInUp animated" data-delay=".2s">
+                <div class="container">
+					<div class="row">
+						<div class="col-lg-6 col-sm-6">
+						<h6 class="mt-20 mb-30">Showing 1–9 of 10 results</h6>
+						</div>
+						<div class="col-lg-6 col-sm-6 text-right">
+							<select name="orderby" class="orderby" aria-label="Shop order">
+								<option value="menu_order" selected="selected">Default sorting</option>
+								<option value="popularity">Sort by popularity</option>
+								<option value="rating">Sort by average rating</option>
+								<option value="date">Sort by latest</option>
+								<option value="price">Sort by price: low to high</option>
+								<option value="price-desc">Sort by price: high to low</option>
+							</select>
+						</div>
+					</div>
+                    <div class="row align-items-center">                                  
+                                    <div class="col-lg-3 col-md-6" *ngFor="let planning of  listeplanning">
+                                        <div class="single-pricing ">
+                                            <div class="price-head">								
+                                                <h2>Séance</h2>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                            <h3 >{{planning.nom}}</h3>
+                                            <ul>
+                                                <div>
+                                                    <i class="fa fa-calendar" style="color:#c544e2; padding: 5px;"></i> {{planning.date}} 
+                                                  </div>
+                                                  <li><i class="fa fa-clock" style="color:#c544e2; padding: 5px;"></i><strong>Heure de début :</strong> {{planning.debut}} H</li>
+                                                <li><i class="fa fa-clock" style="color:#c544e2; padding: 5px;"></i><strong>Heure de fin :</strong>{{planning.fin}} H</li>
+                                            </ul>
+                                            <a (click)="confirmReservation(planning.id)">Réserver</a>
+                                        </div>
+                
+                                    </div>
+                                    
+                                    
+                                    
+                                    
+									               
+                                    
+                                    
+                                
+                    </div>
+					<div class="row">
+                    <div class="col-12">
+                        <div class="pagination-wrap mt-50 text-center">
+                                <nav>
+                                    <ul class="pagination">
+                                        <li class="page-item"><a href="#"><i class="fas fa-angle-double-left"></i></a></li>
+                                        <li class="page-item active"><a href="#">1</a></li>
+                                        <li class="page-item"><a href="#">2</a></li>
+                                        <li class="page-item"><a href="#">3</a></li>
+                                        <li class="page-item"><a href="#">...</a></li>
+                                        <li class="page-item"><a href="#">10</a></li>
+                                        <li class="page-item"><a href="#"><i class="fas fa-angle-double-right"></i></a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                    </div>
+                <div></div></div>
+                </div>
+            </section>
+            <!-- shop-area-end -->
+           <!-- cta-area -->
+            
+            <!-- cta-area-end -->	
+        </main>
+        <!-- main-area-end -->
+
+        <!-- footer -->
+        <app-footer></app-footer>
+        <!-- footer-end -->
+		<!-- JS here -->
+        
+    </body>
+
+<!-- Mirrored from htmldemo.zcubethemes.com/maxfit/shop.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Feb 2025 13:00:18 GMT -->
+</html>

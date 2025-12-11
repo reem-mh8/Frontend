@@ -1,0 +1,56 @@
+<section class="signup-section">
+  <div class="signup-card">
+
+    <!-- LOGO FLOTTANT -->
+    <div class="register-logo">
+      <a href="index.html"><img src="assets/img/logo/logo1.png" alt="logo"></a>
+    </div>
+
+    <!-- TITRES -->
+    <h2 class="signup-title">S'inscrire</h2>
+    <p class="signup-subtitle">
+      Créez un compte salle de sport en remplissant les informations ci-dessous
+    </p>
+
+    <!-- FORMULAIRE -->
+    <form (ngSubmit)="addNewSalleDeSport()" [formGroup]="salleDeSportForm">
+
+      <input formControlName="nom" type="text" class="form-control" placeholder="Nom" />
+      <div *ngIf="nom?.touched && nom?.invalid">
+        <small class="text-danger" *ngIf="nom?.errors?.['required']">Nom est obligatoire</small>
+      </div>
+
+      <input formControlName="adresse" type="text" class="form-control" placeholder="Adresse" />
+      <div *ngIf="adresse?.touched && adresse?.invalid">
+        <small class="text-danger" *ngIf="adresse?.errors?.['required']">Adresse est obligatoire</small>
+      </div>
+
+      <input formControlName="email" type="email" class="form-control" placeholder="Email" />
+      <div *ngIf="email?.touched && email?.invalid">
+        <small class="text-danger" *ngIf="email?.errors?.['required']">Email est obligatoire</small>
+        <small class="text-danger" *ngIf="email?.errors?.['email']">Format d'email invalide</small>
+      </div>
+
+      <input formControlName="mobile" type="text" class="form-control" placeholder="Mobile" />
+      <div *ngIf="mobile?.touched && mobile?.invalid">
+        <small class="text-danger" *ngIf="mobile?.errors?.['required']">Mobile est obligatoire</small>
+      </div>
+
+      <input formControlName="mp" type="password" class="form-control" placeholder="Mot de passe" />
+      <div *ngIf="mp?.touched && mp?.invalid">
+        <small class="text-danger" *ngIf="mp?.errors?.['required']">Mot de passe est obligatoire</small>
+      </div>
+
+      <span [innerHTML]="messageCommande"></span>
+
+      <button class="signup-btn" type="submit">S'inscrire</button>
+
+    </form>
+
+    <p class="mt-3">
+      Vous avez déjà un compte ? 
+      <a class="signup-link" routerLink="/salle-de-sport-login">Connexion</a>
+    </p>
+
+  </div>
+</section>

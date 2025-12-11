@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="admin dashboard, admin template, administration, analytics, bootstrap, disease, doctor, elegant, health, hospital admin, medical dashboard, modern, responsive admin dashboard">
+    <meta name="author" content="DexignZone">
+    <meta name="robots" content="">
+    <meta name="description" content="Welly is a clean-code, responsive HTML Admin template that can be easily customized to fit the needs of various hospital, medical dashboard, health, doctor, and other businesses.">
+    <meta property="og:title" content="Welly - Hospital Admin Dashboard Bootstrap HTML Template">
+    <meta property="og:description" content="Welly is a clean-code, responsive HTML Admin template that can be easily customized to fit the needs of various hospital, medical dashboard, health, doctor, and other businesses.">
+    <meta property="og:image" content="social-image.png">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Mobile Specific -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Title -->
+    <title>Welly - Hospital Admin Dashboard Bootstrap HTML Template</title>
+    <!-- Favicon icon -->
+    
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <app-nav-header></app-nav-header>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+        
+        <!--**********************************
+            Chat box start
+        ***********************************-->
+        <!-- Le code du chat box reste inchangé -->
+        <!--**********************************
+            Chat box End
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+   
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+         <app-menu></app-menu>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="page-titles">
+                    
+                </div>
+                <!-- row -->
+                <div class="row">
+                    
+                    <div class="col-xl-6 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Ajouter Catégorie</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="basic-form">
+                                    <form (ngSubmit)="addNewCategory()" [formGroup]="categoryForm">
+
+                                        <div class="row">
+                                            <div class="form-group col-md-12">
+                                                <label>Nom de la catégorie</label>
+                                                <input type="text" class="form-control" placeholder="Entrez le nom de la catégorie"
+                                                    formControlName="nom">
+                                                <div *ngIf="nom?.touched && nom?.invalid" class="mt-2">
+                                                    <small class="text-danger" *ngIf="nom?.errors?.['required']">
+                                                        Le nom est obligatoire
+                                                    </small>
+                                                    <small class="text-danger" *ngIf="nom?.errors?.['minlength']">
+                                                        Le nom doit contenir au moins 2 caractères
+                                                    </small>
+                                                    <small class="text-danger" *ngIf="nom?.errors?.['maxlength']">
+                                                        Le nom ne peut pas dépasser 50 caractères
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                        <span [innerHTML]="this.messageCommande"></span>
+                                        <button type="submit" class="btn btn-primary mt-3">Ajouter Catégorie</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+           
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+        
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    
+</body>
+
+</html>

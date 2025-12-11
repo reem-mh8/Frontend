@@ -1,0 +1,144 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Evocar - Electric Vehicle & Charging Station HTML Template</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <!-- Cursor -->
+  <div class="cursor js-cursor"></div>
+  <!-- header -->
+  <app-header></app-header>
+  <!-- header-end -->
+
+  <!-- offcanvas-area -->
+  <div class="offcanvas-menu">
+    <span class="menu-close"><i class="fas fa-times"></i></span>
+    <form role="search" method="get" id="searchform" class="searchform" action="#">
+      <input type="text" name="s" id="search" placeholder="Search"/>
+      <button><i class="fa fa-search"></i></button>
+    </form>
+    <div id="cssmenu3" class="menu-one-page-menu-container">
+      <ul class="menu">
+        <li class="menu-item"><a href="index.html">Home</a></li>
+        <li class="menu-item"><a href="about.html">About Us</a></li>
+        <li class="menu-item"><a href="classes.html">Classes</a></li>
+        <li class="menu-item"><a href="pricing.html">Pricing</a></li>
+        <li class="menu-item"><a href="team.html">Team</a></li>
+        <li class="menu-item"><a href="projects.html">Cases Study</a></li>
+        <li class="menu-item"><a href="blog.html">Blog</a></li>
+        <li class="menu-item"><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div id="cssmenu2" class="menu-one-page-menu-container">
+      <ul class="menu">
+        <li class="menu-item"><a href="#home"><span>+8 12 3456897</span></a></li>
+        <li class="menu-item"><a href="#howitwork"><span>info@example.com</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="offcanvas-overly"></div>
+  <!-- offcanvas-end -->
+
+  <!-- main-area -->
+  <main>
+    <!-- breadcrumb-area -->
+    <section class="breadcrumb-area d-flex p-relative align-items-center" style="background-image:url(img/bg/bdrc-bg.jpg)">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-xl-12 col-lg-12">
+            <div class="breadcrumb-wrap text-left">
+              <div class="breadcrumb-title">
+                <h2>Liste des salles de sport disponibles</h2>
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Acceuil</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Liste Salles</li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- breadcrumb-area-end -->
+
+    <!-- shop-area -->
+    <section class="shop-area pt-120 pb-120 p-relative" data-animation="fadeInUp animated" data-delay=".2s">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6">
+            <h6 class="mt-20 mb-30">
+              Affichage de {{ (currentPage-1)*itemsPerPage + 1 }} – {{ getPageEnd() }} sur {{ listeSalleDeSport.length }} salle(s)
+            </h6>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-lg-3 col-md-6" *ngFor="let salle of sallesToDisplay">
+            <div class="product mb-40">
+              <div class="product__img">
+                <a href="shop-details.html"><img src="img/shop/img5.jpg" alt=""></a>
+                <div class="product-action text-center">
+                  <a href="shop-details.html">Add Cart</a>
+                </div>
+              </div>
+              <div class="product__content text-center pt-30">
+                <h3 class="pro-title"><a >Nom: {{ salle.nom }}</a></h3>
+                <h3 class="pro-title"><a >Adresse: {{ salle.adresse }}</a></h3>
+                <h3 class="pro-title"><a >Email: {{ salle.email }}</a></h3>
+                <h3 class="pro-title"><a >Mobile: {{ salle.mobile }}</a></h3>
+            
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="row">
+          <div class="col-12">
+            <div class="pagination-wrap mt-50 text-center">
+              <nav>
+                <ul class="pagination">
+                  <!-- Flèche gauche -->
+                  <li class="page-item">
+                    <a class="page-link" href="#" (click)="prevPage(); $event.preventDefault()">
+                      <i class="fas fa-angle-double-left"></i>
+                    </a>
+                  </li>
+
+                  <!-- Numéros de pages -->
+                  <li class="page-item" *ngFor="let page of [].constructor(totalPages()); let i = index" 
+                      [class.active]="currentPage === i + 1">
+                    <a class="page-link" href="#" (click)="goToPage(i + 1); $event.preventDefault()">{{ i + 1 }}</a>
+                  </li>
+
+                  <!-- Flèche droite -->
+                  <li class="page-item">
+                    <a class="page-link" href="#" (click)="nextPage(); $event.preventDefault()">
+                      <i class="fas fa-angle-double-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- shop-area-end -->
+
+  </main>
+  <!-- main-area-end -->
+
+  <!-- footer -->
+  <app-footer></app-footer>
+  <!-- footer-end -->
+
+</body>
+</html>

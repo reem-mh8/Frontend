@@ -1,0 +1,163 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    
+<!-- Mirrored from htmldemo.zcubethemes.com/maxfit/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Feb 2025 13:00:35 GMT -->
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Maxfit - Fitness Gym HTML Template</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+    </head>
+    <body>
+        <!-- Cursor -->
+    <div class="cursor js-cursor"></div>
+       <!-- header -->
+        <app-header></app-header>
+        <!-- header-end -->
+        <!-- offcanvas-area -->
+          <div class="offcanvas-menu">
+             <span class="menu-close"><i class="fas fa-times"></i></span>
+             <form role="search" method="get" id="searchform"   class="searchform" action="#">
+                <input type="text" name="s" id="search" placeholder="Search"/>
+                <button><i class="fa fa-search"></i></button>
+             </form>
+             <div id="cssmenu3" class="menu-one-page-menu-container">
+                <ul  class="menu">
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="index.html">Home</a></li>
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="about.html">About Us</a></li>
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="classes.html">Classes</a></li>
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="pricing.html">Pricing </a></li>
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="team.html">Team </a></li>
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="projects.html">Cases Study</a></li>
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="blog.html">Blog</a></li>
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="contact.html">Contact</a></li>
+                </ul>
+             </div>
+             <div id="cssmenu2" class="menu-one-page-menu-container">
+                <ul id="menu-one-page-menu-12" class="menu">
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#home"><span>+8 12 3456897</span></a></li>
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#howitwork"><span>info@example.com</span></a></li>
+                </ul>
+             </div>
+          </div>
+          <div class="offcanvas-overly"></div>
+          <!-- offcanvas-end -->
+        <!-- main-area -->
+        <main>
+            
+           <!-- breadcrumb-area -->
+            <section class="breadcrumb-area d-flex  p-relative align-items-center" style="background-image:url(img/bg/bdrc-bg.jpg)">
+              
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-12 col-lg-12">
+                            <div class="breadcrumb-wrap text-left">
+                                <div class="breadcrumb-title">
+                                  <h2>Contact Us</h2>  
+                                    <div class="breadcrumb-wrap">
+                              
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="#">Acceuil</a></li>
+                                       <li class="breadcrumb-item active" aria-current="page">Contacter Nous</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                                </div>
+                            </div>
+                         
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb-area-end -->
+           
+             <!-- contact-area -->
+            <section id="contact" class="contact-area after-none contact-bg pt-120 pb-120 p-relative fix">
+                
+                <div class="container">
+             
+					<div class="row">
+						
+                         
+                        <div class="col-lg-12 order-2">
+                            <div class="contact-bg">
+                            <div class="section-title center-align text-center mb-50">
+                                <h2>
+                                Contactez-nous pour toute question ou demande d'information
+                                </h2>
+                               
+                            </div>
+                             
+						<form action="https://htmldemo.zcubethemes.com/maxfit/mail.php" method="post" [formGroup]="contactForm" (ngSubmit)="addNewContact()">
+							<div class="row">
+                            <div class="col-lg-4">
+                                <div class="contact-field p-relative c-name mb-30">                                    
+                                    <input type="text" id="firstn" formControlName="nom" placeholder="Nom" required>
+                                    <i class="icon fal fa-user"></i>
+                                </div>                               
+                            </div>
+							<div class="col-lg-4">                               
+                                <div class="contact-field p-relative c-subject mb-30">                                   
+                                    <input type="text" id="email" formControlName="email" placeholder="Email" required>
+                                    <i class="icon fal fa-envelope"></i>
+                                </div>
+                            </div>	
+                            <div class="col-lg-4">                               
+                                <div class="contact-field p-relative c-subject mb-30">                                   
+                                    <input type="text" id="email" formControlName="sujet" placeholder="Sujet" required>
+                                    <i class="icon fal fa-edit"></i>
+                                </div>
+                            </div>		
+                            <div class="col-lg-4">                               
+                                <div class="contact-field p-relative c-subject mb-30">                                   
+                                    <input type="text" id="phone" formControlName="mobile" placeholder="Numéro de téléphone" required>
+                                     <i class="icon fal fa-phone"></i>
+                                </div>
+                            </div>	                            
+                            <div class="col-lg-12">
+                                <div class="contact-field p-relative c-message mb-30">                                  
+                                    <textarea formControlName="message" id="message" cols="30" rows="8" placeholder="Ecrivez vos commentaires"></textarea>
+                                     <i class="icon fal fa-edit"></i>
+                                </div>
+                                <div class="slider-btn  text-center">                                          
+                                            <button class="btn ss-btn" type="submit"  data-animation="fadeInRight" >Envoyer<i class="fal fa-long-arrow-right"></i></button>				
+                                </div>                             
+                            </div>
+                            </div>
+                        
+                    </form>
+                            
+                            </div>
+                        
+						</div>
+					</div>
+                    
+                </div>
+               
+            </section>
+            <!-- contact-area-end -->
+            <!-- map-area-end -->
+            
+		     <!-- map-area-end -->
+            <!-- services-area -->          
+            
+            <!-- services-area-end -->
+         <!-- cta-area -->
+            
+            <!-- cta-area-end -->	
+        </main>
+        <!-- main-area-end -->
+
+        <!-- footer -->
+        <app-footer></app-footer>
+        <!-- footer-end -->
+
+		<!-- JS here -->
+        
+    </body>
+
+<!-- Mirrored from htmldemo.zcubethemes.com/maxfit/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Feb 2025 13:00:38 GMT -->
+</html>

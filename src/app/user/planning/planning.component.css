@@ -1,0 +1,115 @@
+/* loading page */
+.loading-inner span {
+  letter-spacing: 10px;
+}
+/* Button Container */
+.button-container {
+  position: relative; 
+  margin: 50px; 
+}
+
+/* Button */
+.btn.btn-primary {
+  background-color: #b615ae;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.btn.btn-primary:hover {
+  background-color: #a30b9e; 
+}
+.btn.btn-secondary{
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Positioning */
+.custom-position {
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+}
+.contact-area1 {
+  max-width: 900px;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.5);
+  transform: translateY(20px);
+  margin-bottom: 20px;
+  justify-content: center; 
+  align-items: center; 
+  
+  
+}
+.form-label {
+  margin-bottom: 5px;
+}
+.input-group {
+  margin-bottom: 15px;
+}
+.form-control {
+  border-radius: 5px;
+}
+.form-control.invalid-input {
+  border-color: red;
+}
+.input-recaptcha {
+  margin-bottom: 20px;
+}
+.g-recaptcha {
+  margin-top: 10px;
+}
+button[type="submit"] {
+  border-radius: 5px;
+}
+
+
+
+/* loading page */
+.loading-inner span {
+  letter-spacing: 10px;
+}
+
+/* design input image */
+input[type=file]::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background:#b615ae;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition:  .2s ease-in-out, color .2s ease-in-out; 
+}
+.card-header {
+  background-color: #c087be;
+  padding: 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-title {
+  margin: 0;
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Style pour le bouton de sélection de fichier lorsque survolé */
+.form-control:hover:not(:disabled):not([readonly])::file-selector-button,
+.wp-block-categories-dropdown select:hover:not(:disabled):not([readonly])::file-selector-button {
+/* Ajoutez vos styles pour le bouton lorsqu'il est survolé */
+/* Exemple de styles */
+background-color: #972691;
+border-color: #ccc;
+}

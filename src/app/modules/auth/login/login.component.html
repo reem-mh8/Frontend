@@ -1,0 +1,41 @@
+<section class="signup-section">
+  <div class="signup-card">
+
+    <!-- Logo flottant -->
+    <div class="login-logo">
+      <a href="#"><img src="assets/img/logo/logo1.png" alt="logo"></a>
+    </div>
+
+    <!-- Title -->
+    <h4 class="signup-title mt-3">Se connecter</h4>
+
+    <!-- FORM ANGULAR -->
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+      <!-- Email -->
+      <input type="email" class="form-control mb-2" formControlName="email" placeholder="hello@example.com" />
+      <div *ngIf="email?.touched && email?.invalid" class="mb-2">
+        <small class="text-danger" *ngIf="email?.errors?.['required']">Email obligatoire</small>
+        <small class="text-danger" *ngIf="email?.errors?.['email']">Format invalide</small>
+      </div>
+
+      <!-- Password -->
+      <input type="password" class="form-control mb-2" formControlName="mp" placeholder="••••••••" />
+      <div *ngIf="mp?.touched && mp?.invalid" class="mb-2">
+        <small class="text-danger" *ngIf="mp?.errors?.['required']">Mot de passe obligatoire</small>
+      </div>
+
+      <!-- Button -->
+      <button type="submit" class="signup-btn mt-2 btn btn-primary w-100">Connexion</button>
+    </form>
+
+    <!-- Message -->
+    <div *ngIf="messageCommande" [innerHTML]="messageCommande" class="mt-2"></div>
+
+    <!-- Register -->
+    <p class="mt-3 text-center">
+      Vous n'avez pas de compte ?
+      <a href="/register" class="signup-link">S'inscrire</a>
+    </p>
+  </div>
+</section>

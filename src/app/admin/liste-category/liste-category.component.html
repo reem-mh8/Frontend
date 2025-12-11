@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="admin dashboard, admin template, administration, analytics, bootstrap, disease, doctor, elegant, health, hospital admin, medical dashboard, modern, responsive admin dashboard">
+    <meta name="author" content="DexignZone">
+    <meta name="robots" content="">
+    <meta name="description" content="Welly is a clean-code, responsive HTML Admin template that can be easily customized to fit the needs of various hospital, medical dashboard, health, doctor, and other businesses.">
+    <meta property="og:title" content="Welly - Hospital Admin Dashboard Bootstrap HTML Template">
+    <meta property="og:description" content="Welly is a clean-code, responsive HTML Admin template that can be easily customized to fit the needs of various hospital, medical dashboard, health, doctor, and other businesses.">
+    <meta property="og:image" content="social-image.png">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Mobile Specific -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Title -->
+    <title>Welly - Hospital Admin Dashboard Bootstrap HTML Template</title>
+    <!-- Favicon icon -->
+    
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <app-nav-header></app-nav-header>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+        
+        <!--**********************************
+            Chat box start
+        ***********************************-->
+        <!-- Le code du chat box reste inchangé -->
+        <!--**********************************
+            Chat box End
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <app-menu></app-menu>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="page-titles">
+            <h4>Gestion des catégories</h4>
+        </div>
+        <!-- row -->
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Liste des Catégories</h4>
+                        <a href="/ajouter-category" class="btn btn-primary btn-sm ms-3">
+                            <i class="fa fa-plus me-2"></i>Ajouter Catégorie
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="example3" class="display min-w850">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nom</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let category of listeCategories">
+                                        <td>{{category.id}}</td>
+                                        <td>
+                                            <strong>{{category.nom}}</strong>
+                                        </td>
+                                        
+                                        <td>
+                                            <div class="d-flex">
+                                                <a href="/modifier-categorie/{{category.id}}" class="btn btn-primary shadow btn-xs sharp me-1">
+                                                    <i class="fa fa-pencil"></i>
+                                                </a>
+                                                <a (click)="deleteCategory(category)" class="btn btn-danger shadow btn-xs sharp">
+                                                    <i class="fa fa-trash"></i>
+                                                </a>
+                                            </div>												
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Message si aucune catégorie -->
+                                    <tr *ngIf="listeCategories.length === 0">
+                                        <td colspan="3" class="text-center text-muted py-4">
+                                            <i class="fa fa-inbox fa-2x mb-2"></i>
+                                            <br>
+                                            Aucune catégorie trouvée
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>iv>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer"></div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+        
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+</body>
+</html>
